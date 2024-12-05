@@ -2,6 +2,7 @@
     import { flip } from "svelte/animate";
     import { dndzone } from "svelte-dnd-action";
     import H1Dnd from "@/components/dnd-components/H1-dnd.svelte";
+    import PDnd from "@/components/dnd-components/P-dnd.svelte";
     // @ts-ignore
     export let dndResult, items;
 
@@ -68,7 +69,7 @@
             {:else if item.name == "h6"}
                 <H1Dnd {item} {dndResult} />
             {:else if item.name == "p"}
-                <p>Paragraph</p>
+                <PDnd {item} {dndResult}/>
             {:else if item.name == "img"}
                 <p>img</p>
             {:else if item.name == "list"}
