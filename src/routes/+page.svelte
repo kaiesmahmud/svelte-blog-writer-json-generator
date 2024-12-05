@@ -1,7 +1,18 @@
 <script>
-	import Counter from './Counter.svelte';
-	import welcome from '$lib/images/svelte-welcome.webp';
-	import welcomeFallback from '$lib/images/svelte-welcome.png';
+    import {Button} from "@/components/ui/button";
+
+
+	const allButtons = [
+		"h1",
+		"h2",
+		"h3",
+		"h4",
+		"h5",
+		"h6",
+		"p",
+		"img",
+		"list",
+	]
 </script>
 
 <svelte:head>
@@ -9,51 +20,28 @@
 	<meta name="description" content="Svelte demo app" />
 </svelte:head>
 
-<section>
-	<h1>
-		<span class="welcome">
-			<picture>
-				<source srcset={welcome} type="image/webp" />
-				<img src={welcomeFallback} alt="Welcome" />
-			</picture>
-		</span>
-
-		to your new<br />SvelteKit app
-	</h1>
-
-	<h2>
-		try editing <strong>src/routes/+page.svelte</strong>
-	</h2>
-
-	<Counter />
+<section class="w-full min-h-screen grid grid-cols-12 border gap-5 p-5">
+	 <div class="flex flex-col gap-2 p-3">
+		{#each allButtons as item}
+			<Button variant="outline" class="flex gap-3 font-bold  p-5" title={item}>
+				<span class="text-xl text-slate-700">
+					<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" {...$$props}>
+						<path fill="currentColor" d="M11 13H5v-2h6V5h2v6h6v2h-6v6h-2z" />
+					</svg>
+				</span>
+				<span class=" uppercase">
+					{item}
+				</span>
+			</Button>
+		{/each}
+	 </div>
+	 <div class="col-span-5 border rounded p-5 bg-muted/50">
+		<h1 class="text-xl font-bold">DND</h1>
+	</div>
+	<div class="col-span-6 border rounded p-5">
+		<h1 class="text-xl font-bold">Blog</h1>
+		
+	 </div>
+	
 </section>
-
-<style>
-	section {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		flex: 0.6;
-	}
-
-	h1 {
-		width: 100%;
-	}
-
-	.welcome {
-		display: block;
-		position: relative;
-		width: 100%;
-		height: 0;
-		padding: 0 0 calc(100% * 495 / 2048) 0;
-	}
-
-	.welcome img {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		display: block;
-	}
-</style>
+ 

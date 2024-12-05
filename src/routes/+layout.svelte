@@ -15,7 +15,7 @@
 
 	<footer>
 		<p>
-			visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to learn about SvelteKit
+			visit <a href="https://github.com/kaiesmahmud">GitHub</a> to learn about Nehal
 		</p>
 	</footer>
 </div>
@@ -27,7 +27,7 @@
 		min-height: 100vh;
 	}
 
-	main {
+	/* main {
 		flex: 1;
 		display: flex;
 		flex-direction: column;
@@ -36,7 +36,7 @@
 		max-width: 64rem;
 		margin: 0 auto;
 		box-sizing: border-box;
-	}
+	} */
 
 	footer {
 		display: flex;
