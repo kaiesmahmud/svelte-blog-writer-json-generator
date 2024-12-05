@@ -115,7 +115,7 @@
         @apply w-full h-auto rounded-lg shadow-md my-6;
     }
     a {
-        @apply underline hover:text-blue-500 font-medium text-sky-800 !important;
+        @apply underline text-sky-800 hover:text-blue-500 font-medium  !important;
     }
     .p-a {
         @apply underline hover:text-blue-500 font-medium text-sky-800;
