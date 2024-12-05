@@ -37,7 +37,7 @@
 		{/each}
 	 </div>
 	 <div class="col-span-5 border rounded p-5 bg-muted/50">
-		<h1 class="text-xl font-bold">DND</h1>
+		<h1 class="text-xl font-bold">Blog Page Create</h1>
 	</div>
 	<PreviewBlogJson/>
 	
