@@ -1,5 +1,6 @@
 <script>
     import {Button} from "@/components/ui/button";
+    import PreviewBlogJson from "./PreviewBlogJson.svelte";
 
 
 	const allButtons = [
@@ -38,10 +39,7 @@
 	 <div class="col-span-5 border rounded p-5 bg-muted/50">
 		<h1 class="text-xl font-bold">DND</h1>
 	</div>
-	<div class="col-span-6 border rounded p-5">
-		<h1 class="text-xl font-bold">Blog</h1>
-		
-	 </div>
+	<PreviewBlogJson/>
 	
 </section>
  
