@@ -34,7 +34,7 @@
 		// @ts-ignore
 	};
 
-	dndResult.subscribe((va) => console.log(" update ", va));
+	// dndResult.subscribe((va) => console.log(" update ", va));
 </script>
 
 <svelte:head>
