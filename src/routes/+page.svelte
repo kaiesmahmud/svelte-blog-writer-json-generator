@@ -8,21 +8,21 @@
 	import ParentDnd from "./ParentDND.svelte";
 
 	let nodes = [
-		{ id: 1, name: "h1" }, 
+		{ id: 1, name: "h1", data: { type: "h1", value: "some data" } },
 	];
 	let dndResult = writable(nodes);
 
 	const addNewItem = (/** @type {any} */ name) => {
 		//generate id
 		// @ts-ignore
-		let items = $dndResult
+		let items = $dndResult;
 		let id = items.length + 1;
 		// check id
 		// @ts-ignore
 		if (!$dndResult[id]) {
 			//Add New Page to Main Obj
 			// @ts-ignore
-			items = [...items, { id, name }];
+			items = [...items, { id, name, data: { type: name, value: "" } }];
 			// @ts-ignore
 		} else {
 			// @ts-ignore
@@ -34,7 +34,7 @@
 		// @ts-ignore
 	};
 
-	dndResult.subscribe((va)=>console.log(" update ",va))
+	dndResult.subscribe((va) => console.log(" update ", va));
 </script>
 
 <svelte:head>
@@ -46,7 +46,7 @@
 	<div class="flex flex-col gap-2 p-3">
 		{#each allButtons as item}
 			<Button
-				on:click={()=>addNewItem(item)}
+				on:click={() => addNewItem(item)}
 				variant="outline"
 				class="flex gap-3 font-bold  p-5"
 				title={item}
@@ -75,5 +75,5 @@
 		<h1 class="text-xl font-bold">Blog Page Create</h1>
 		<ParentDnd {dndResult} items={$dndResult} />
 	</div>
-	<PreviewBlogJson />
+	<PreviewBlogJson {dndResult} />
 </section>
